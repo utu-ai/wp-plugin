@@ -13,7 +13,6 @@
 	}
 
 	utu.init("<?php echo $settings['token_id']; ?>");
-	utu.track('Visit Start', {});
 
 	let raf = getParameterByName('raf');
   let ls = getParameterByName('ls');
