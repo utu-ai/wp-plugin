@@ -23,10 +23,10 @@ class utu {
 	}
 
 	public function __construct(){
-        if(is_admin()){
-	    	add_action('admin_menu', array($this, 'add_settings_page'));
-	    	add_action('admin_init', array($this, 'utu_init'));
-	    	require_once dirname( __FILE__ ) . '/meta-box.php';
+    if(is_admin()){
+    	add_action('admin_menu', array($this, 'add_settings_page'));
+    	add_action('admin_init', array($this, 'utu_init'));
+    	require_once dirname( __FILE__ ) . '/meta-box.php';
 		} else {
 			require_once dirname( __FILE__ ) . '/page.php';
 		}
@@ -74,22 +74,22 @@ class utu {
 
 
   public function utu_init(){
-	   register_setting('utu_settings_group', 'utu_settings');
-     $settings = (array) get_option( 'utu_settings' );
-     add_settings_section(
-	      'utu_settings_section',
-	       'uTu ',
-	       array($this, 'print_section_info'),
-         'utu_options'
-     );
-	   add_settings_field(
-		    'token_id',
-		    'uTu Token', // human readable part
-		    array($this, 'my_text_input'),  // the function that renders the field
-	    	'utu_options',
-	    	'utu_settings_section',
-        array('name' => 'utu_settings[token_id]', 'value' => $settings['token_id'],)
-		);
+    register_setting('utu_settings_group', 'utu_settings');
+    $settings = (array) get_option( 'utu_settings' );
+    add_settings_section(
+      'utu_settings_section',
+       'uTu ',
+       array($this, 'print_section_info'),
+       'utu_options'
+    );
+    add_settings_field(
+      'token_id',
+      'uTu Token', // human readable part
+      array($this, 'my_text_input'),  // the function that renders the field
+    	'utu_options',
+    	'utu_settings_section',
+      array('name' => 'utu_settings[token_id]', 'value' => $settings['token_id'],)
+    );
 	}
 
 	public function validate( $input ) {
