@@ -15,7 +15,11 @@
   utu.init("<?php echo $settings['token_id']; ?>");
 
   let ls = getParameterByName('ls');
-  utu.user({ leadSource: ls || 'organic' });
+  utu.identity({
+    custom: {
+      leadSource: ls || 'organic'
+    }
+  });
 
 </script>
 <!--q end uTu -->

@@ -44,10 +44,10 @@
 
       ?>
         <script type='text/javascript'>
-          var ctaClicks = window.document.getElementsByClassName("mxpCTA");
+          var ctaClicks = window.document.getElementsByClassName("trackCTA");
           [].forEach.call(ctaClicks, function (cta) {
             cta.addEventListener("click", function(event) {
-              utu.track('betterbots > utu', {});
+              utu.track('wp > site', {});
           	});
           });
         </script>
