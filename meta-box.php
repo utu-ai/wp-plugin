@@ -5,9 +5,7 @@
   */
   add_action( 'admin_menu', 'utu_create_meta_box' );
   add_action( 'admin_menu', 'page_create_meta_box' );
-  add_action( 'admin_menu', 'event_create_meta_box' );
-  add_action( 'admin_menu', 'course_create_meta_box' );
-  add_action( 'admin_menu', 'lesson_create_meta_box' );
+  add_action( 'admin_menu', 'job_create_meta_box' );
   add_action( 'save_post', 'utu_update_event_label' );
 
   function utu_create_meta_box(){
@@ -22,21 +20,9 @@
     }
   }
 
-  function event_create_meta_box(){
+  function job_create_meta_box(){
     if( function_exists('add_meta_box') ){
-      add_meta_box( 'utu-event-label', 'uTu Event Label', 'utu_event_box', 'tp_event' );
-    }
-  }
-
-  function course_create_meta_box(){
-    if( function_exists('add_meta_box') ){
-      add_meta_box( 'utu-event-label', 'uTu Event Label', 'utu_event_box', 'lp_course' );
-    }
-  }
-
-  function lesson_create_meta_box(){
-    if( function_exists('add_meta_box') ){
-      add_meta_box( 'utu-event-label', 'uTu Event Label', 'utu_event_box', 'lp_lesson' );
+      add_meta_box( 'utu-event-label', 'uTu Event Label', 'utu_event_box', 'jobpost' );
     }
   }
 
