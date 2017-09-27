@@ -43,6 +43,7 @@
       echo "<script>console.log( 'set event: " . $event_label . " (EOL)' );</script>";
 
       ?>
+	  <input type="button" class="trackCTA" />
         <script type='text/javascript'>
           var ctaClicks = window.document.getElementsByClassName("trackCTA");
           [].forEach.call(ctaClicks, function (cta) {
